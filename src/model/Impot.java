@@ -3,16 +3,11 @@
  */
 package model;
 
-
 /**
  * @author FJ
  *
  */
 public final class Impot {
-	
-	public static double pourcentageReduce(double value, float pourcent) {
-		return (value - (value * (pourcent / 100)));
-	}
 	
 	public static double impotCalculation(double Ca, Entreprise entreprise) throws Throwable {
 		if (Ca > 0) {
@@ -23,14 +18,14 @@ public final class Impot {
 				return sasImpotCalculation(Ca);
 			}
 			throw new Exception("Type d'entreprise inconnu");
-		} throw new Exception("Le CA doit etre supérieur a 0");
+		} throw new Exception("Le CA doit etre supï¿½rieur a 0");
 	}
 	
 	public static double autoEntrepriseImpotCalculation(double Ca) {
-		return pourcentageReduce(Ca, TypeEntreprise.AUTOENTREPRISE.getTauxImpot());	
+		return Utils.pourcentageReduce(Ca, TypeEntreprise.AUTOENTREPRISE.getTauxImpot());	
 	}
 	
 	public static double sasImpotCalculation(double Ca) {
-		return pourcentageReduce(Ca, TypeEntreprise.SAS.getTauxImpot());
+		return Utils.pourcentageReduce(Ca, TypeEntreprise.SAS.getTauxImpot());
 	}
 }
