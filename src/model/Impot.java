@@ -7,7 +7,7 @@ package model;
  * @author FJ
  *
  */
-public final class Impot {
+public class Impot {
 	
 	public static double impotCalculation(double Ca, Entreprise entreprise) throws Throwable {
 		if (Ca > 0) {

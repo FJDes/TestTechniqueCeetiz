@@ -13,10 +13,10 @@ import java.util.regex.Pattern;
 /**
  * @author FJ
  * 
- * Class which contain many useful static method
+ * Class which contain useful static method
  *
  */
-public class Utils {
+public final class Utils {
 	public static double pourcentageReduce(double value, double pourcent) {
 		return (value - (value * (pourcent / 100)));
 	}
@@ -57,6 +57,12 @@ public class Utils {
 		return str.replaceAll("\\s+", "");
 	}
 	
+	/**
+	 * Checking digital suite
+	 * @param str digital character only
+	 * @param length determines the length that the method should check
+	 * @return true if the numerical string is correctly set
+	 */
 	public static boolean checkNumericalFormat(String str, int length) {
 		Pattern pattern = Pattern.compile("\\d{" + length + "}");
 		Matcher match = pattern.matcher(str);
