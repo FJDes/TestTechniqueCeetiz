@@ -7,9 +7,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author FJ
+ * 
+ * Class which contain many useful static method
  *
  */
 public class Utils {
@@ -22,6 +26,11 @@ public class Utils {
 		// (value - (value * (oourcent / 100)))
 	}
 	
+	/**
+	 * Format a number in a classic and understandable way
+	 * @param number accept all type of number
+	 * @return a formated str
+	 */
 	public static String formatNumber(Number number) {
 		final NumberFormat instance = NumberFormat.getNumberInstance(Locale.FRENCH);
 		instance.setMinimumFractionDigits(2);
@@ -31,12 +40,26 @@ public class Utils {
 		return instance.format(number);
 	}
 	
+	/**
+	 * Format a string in order to have a clean str
+	 * @return a formated str
+	 */
 	public static String formatString(String str) {
 		str = removeDuplicateSpace(str);
 		return str;
 	}
 	
-	private static String removeDuplicateSpace(String str) {
+	public static String removeDuplicateSpace(String str) {
 		return str.replaceAll("\\s+", " ").trim();
+	}
+	
+	public static String removeAllSpace(String str) {
+		return str.replaceAll("\\s+", "");
+	}
+	
+	public static boolean checkNumericalFormat(String str, int length) {
+		Pattern pattern = Pattern.compile("\\d{" + length + "}");
+		Matcher match = pattern.matcher(str);
+		return match.find();
 	}
 }
