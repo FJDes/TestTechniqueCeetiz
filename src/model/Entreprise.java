@@ -1,6 +1,9 @@
 package model;
 
-
+/**
+ * @author FJ
+ *
+ */
 public class Entreprise {
 	private final Siret siret;
 	private final String denomination;
@@ -20,14 +23,23 @@ public class Entreprise {
 		}
 	}
 	
+	/**
+	 * @return the siret obj
+	 */
 	public Siret getSiret() {
 		return siret;
 	}
 	
+	/**
+	 * @return the denomination string
+	 */
 	public String getDenomination() {
 		return denomination;
 	}
 	
+	/**
+	 * @return the TypeEntreprise of the entreprise
+	 */
 	public TypeEntreprise getType() {
 		return type;
 	}

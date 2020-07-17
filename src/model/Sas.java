@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * @author FJ
+ *
+ */
 public class Sas extends Entreprise {
 
 	public TypeEntreprise 	type;

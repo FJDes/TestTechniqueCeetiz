@@ -5,7 +5,8 @@ package model;
 
 /**
  * @author FJ
- *
+ * 
+ * enumerate all entreprise's type and there properties
  */
 public enum TypeEntreprise {
 	
@@ -23,14 +24,23 @@ public enum TypeEntreprise {
 		this.tauxImpot = tauxImpot;
 	}
 	
+	/**
+	 * @return the enum's index
+	 */
 	public int getIndex() {
 		return index;
 	}
 	
+	/**
+	 * @return the enum's name
+	 */
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * @return the enum's tauxImpot
+	 */
 	public float getTauxImpot() {
 		return tauxImpot;
 	}

@@ -20,11 +20,18 @@ public class Adresse {
 		this.adresseComplete = adresse;
 	}
 	
+	/**
+	 * @param adresse the adresse to set
+	 */
 	public void setAdresseComplete(String adresse) {
 		this.adresseComplete = adresse;
 	}
 	
+	/**
+	 * @return the adresse
+	 */
 	public String getAdresse() {
 		return adresseComplete;
 	}
 }
+
